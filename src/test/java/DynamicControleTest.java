@@ -21,14 +21,14 @@ public class DynamicControleTest extends BaseTest {
 
         assertTrue(driver.findElements(By.xpath(checkbox)).isEmpty());
 
-        WebElement intup = driver.findElement(By.xpath("//form[@id=\"input-example\"]/input"));
+        WebElement input = driver.findElement(By.xpath("//form[@id=\"input-example\"]/input"));
 
-        assertFalse(intup.isEnabled(), "Input is enabled");
+        assertFalse(input.isEnabled(), "Input is enabled");
 
         driver.findElement(By.xpath("//form[@id=\"input-example\"]/button")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id=\"input-example\"]/p")));
 
-        assertTrue(intup.isEnabled(), "Input is disabled.");
+        assertTrue(input.isEnabled(), "Input is disabled.");
 
     }
 }
